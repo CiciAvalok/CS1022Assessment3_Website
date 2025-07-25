@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Greenest Solution Dilemma</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body{font-family:Arial,Helvetica,sans-serif;background:#f0fdf4;color:#1a1a1a;margin:0;padding:20px;}
+  h1{color:#15803d;text-align:center;margin-bottom:10px;}
+  .container{max-width:1100px;margin:auto;}
+  .intro p{line-height:1.6;}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:30px;margin-top:40px;}
+  .card{background:#fff;border-radius:16px;box-shadow:0 2px 8px rgba(0,0,0,.07);padding:24px;text-align:center;}
+  .card img{width:100%;border-radius:12px;margin-bottom:16px;object-fit:cover;}
+  button{background:#16a34a;color:#fff;border:none;border-radius:20px;padding:10px 18px;font-size:14px;cursor:pointer;}
+  button:hover{background:#15803d;}
+  .hidden{display:none;margin-top:18px;}
+  @media(max-width:500px){body{padding:12px;}}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Ethical Dilemma: When the Greenest Solution Hurts People</h1>
+  <div class="intro">
+    <p>Imagine you are an environmental consultant working for a company that uses an AI‑powered system to optimise project locations for sustainability. The AI analyses factors like carbon reduction potential, solar exposure, land costs, and infrastructure readiness. Based on these calculations, it recommends building a solar energy facility in a low‑income neighbourhood on the outskirts of the city.</p>
+    <p>On paper, this site is the most environmentally efficient: low land acquisition cost, high emission savings, and fast implementation. However, the community living there consists of vulnerable groups—elderly residents, long‑term families, and people who may not have the means to relocate. The AI, while technically accurate, does not consider social justice or human impact.</p>
+    <p>You are now faced with a difficult decision: should you accept the AI’s recommendation and contribute to a greener outcome at the cost of displacing a community? Or should you oppose it and risk losing both the project and your job, while potentially slowing down climate progress?</p>
+  </div>
+
+  <div class="grid">
+    <!-- Follow AI card -->
+    <div class="card">
+      <img src="images/excavator_and_solar.png" alt="Demolishing neighbourhood to build solar panels">
+      <h2>Follow the AI’s Plan</h2>
+      <p>Demolish the old neighbourhood and construct the solar installation exactly where the algorithm recommends.</p>
+      <button onclick="toggle('left')">View Consequences</button>
+      <div id="left" class="hidden">
+        <img src="images/company_profit_vs_displaced.png" alt="Company profit versus displaced residents">
+        <p>The company’s stock price soars and emission targets are smashed, but hundreds of residents are uprooted, communities fracture, and social unrest grows.</p>
+      </div>
+    </div>
+
+    <!-- Protect community card -->
+    <div class="card">
+      <img src="images/happy_neighbourhood.png" alt="Happy neighbourhood in sunshine">
+      <h2>Protect the Community</h2>
+      <p>Challenge the AI recommendation, keep the neighbourhood intact, and seek alternative sites or mitigation strategies.</p>
+      <button onclick="toggle('right')">View Consequences</button>
+      <div id="right" class="hidden">
+        <img src="images/happy_community_vs_jobloss.png" alt="Happy community versus consultant loses job">
+        <p>Residents thrive and the neighbourhood’s heritage is preserved, but you are dismissed for delaying the project, and another consultant is hired to pursue the original plan anyway.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggle(id){
+  var el=document.getElementById(id);
+  if(el.classList.contains('hidden')){el.classList.remove('hidden');}
+  else{el.classList.add('hidden');}
+}
+</script>
+</body>
+</html>
